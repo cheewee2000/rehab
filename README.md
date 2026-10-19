@@ -30,3 +30,9 @@ On device two: paste it in **Paste setup code**, then tap **Connect**. The setup
 ## Updating
 Change files, then bump `VERSION` in `sw.js`. Installed copies pick up the new version
 the next time they open with a connection (the page tries the network for 3 s, then falls back to the cached copy).
+
+## Self-hosted backend (instead of Supabase)
+`server/` is a PHP + SQLite stand-in for the Supabase REST calls the app makes, deployed to
+`~/experiments.cwandt.com/rehab-api/` on the CW&T VPS (`scp server/.htaccess server/api.php`).
+In Sync settings use URL `https://www.experiments.cwandt.com/rehab-api` and the key in
+`rehab-api/dbs/anon_key.txt` on the server. The database is `rehab-api/dbs/rehab.sqlite`.

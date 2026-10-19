@@ -1,0 +1,9 @@
+# Supabase-compatible sync endpoint for the rehab PWA: <base>/rest/v1/events -> api.php
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^dbs/ - [F,L]
+    RewriteRule ^rest/v1/events$ api.php [L,QSA]
+</IfModule>
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
